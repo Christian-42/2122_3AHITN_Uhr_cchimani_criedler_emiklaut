@@ -1,4 +1,4 @@
-package com.example.uhrzeit;
+package com.example.uhrzeit.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
