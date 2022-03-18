@@ -19,7 +19,7 @@ public class Zeit{
         this.sek = sek;
     }
 
-    Zeit(int st, int min, int sek) {
+    public Zeit(int st, int min, int sek) {
         setSt(st);
         setMin(min);
         setSek(sek);
@@ -29,6 +29,16 @@ public class Zeit{
     public void gettime(){
         System.out.println("Time: " + st + ":" + min + ":" + sek);
     }
+
+
+    public void gethintergrund(){
+        if ((st >=6 && min >= 0 && sek >= 0)&&(st <= 18 && min <= 59 && sek <= 59)){
+            System.out.println("Hell");
+        }else {
+            System.out.println("Dunkel");
+        }
+    }
+
 
     public Zeit clone(){
         Zeit z1 = new Zeit(st, min, sek);

@@ -1,5 +1,6 @@
 package com.example.uhrzeit.controller;
 
+import com.example.uhrzeit.view.Zeit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class HelloController {
-    public BorderPane Hintergrund;
+    public BorderPane hintergrund;
     public Label aktuelleUhrzeit;
     public Label aktuellesDatum;
     public Label aktuelleKalenderWoche;
@@ -37,7 +38,15 @@ public class HelloController {
 
     public void onstoppuhrClick(ActionEvent actionEvent) {
 
-        }}
+        }
+
+
+    public void hintergrund (BorderPane hintergrund){
+        this.hintergrund = hintergrund;
+
+    }
+
+}
 
 
 
