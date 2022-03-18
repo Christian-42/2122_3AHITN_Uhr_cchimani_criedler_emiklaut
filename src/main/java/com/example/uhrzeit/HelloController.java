@@ -22,12 +22,12 @@ public class HelloController {
 
 
     public void initialize(){
-        aktuellesDatum.setText(ZonedDateTime.now().getYear()+"."+ZonedDateTime.now().getMonth()+"."+ZonedDateTime.now().getDayOfMonth());
+        aktuellesDatum.setText(ZonedDateTime.now().getDayOfMonth()+"."+ZonedDateTime.now().getMonthValue()+"."+ZonedDateTime.now().getYear());
         aktuelleUhrzeit.setText(ZonedDateTime.now().getHour()+":"+ZonedDateTime.now().getMinute()+":"+ZonedDateTime.now().getSecond());
         Calendar calendar=Calendar.getInstance();
         Date date=new Date();
         calendar.setTime(date);
-        aktuelleKalenderWoche.setText(String.valueOf(calendar.getWeekYear()));
+        aktuelleKalenderWoche.setText(String.valueOf(calendar.get(Calendar.WEEK_OF_YEAR)));
 
     }
     @FXML
