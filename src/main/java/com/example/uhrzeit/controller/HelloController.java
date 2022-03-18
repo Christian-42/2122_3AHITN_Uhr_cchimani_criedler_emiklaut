@@ -1,4 +1,4 @@
-package com.example.uhrzeit;
+package com.example.uhrzeit.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
