@@ -1,7 +1,6 @@
 package com.example.uhrzeit.controller;
 
-import com.example.uhrzeit.StoppUhr;
-import com.example.uhrzeit.view.Zeit;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,6 +18,7 @@ public class HelloController {
     public Label aktuelleKalenderWoche;
     public Label stoppuhrausgabe;
     public Button stoppuhr;
+    public Button startUhr;
     @FXML
     private Label welcomeText;
 
@@ -45,7 +45,7 @@ public class HelloController {
 
 
 
-        StoppUhr su = new StoppUhr();
+
         if (startUhr.isHover()) {
             while (h<=59) {
                 stoppuhrausgabe.setText("sec:"+String.valueOf(sec)+" min: "+min+" h: "+h);

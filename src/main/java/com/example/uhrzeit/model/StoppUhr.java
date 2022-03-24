@@ -1,4 +1,4 @@
-package com.example.uhrzeit;
+package com.example.uhrzeit.model;
 
 public class StoppUhr{
 public int sec,min,h;
