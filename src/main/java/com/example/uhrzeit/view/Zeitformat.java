@@ -7,8 +7,8 @@ public class Zeitformat extends Zeit{
     int st;
     int sek;
 
-    Zeitformat(int st, int min, int sek) {
-        super(st, min, sek);
+    Zeitformat() {
+
     }
 
 

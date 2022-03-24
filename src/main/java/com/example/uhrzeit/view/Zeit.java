@@ -1,5 +1,8 @@
 package com.example.uhrzeit.view;
 
+import java.time.ZonedDateTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 public class Zeit{
@@ -19,12 +22,16 @@ public class Zeit{
         this.sek = sek;
     }
 
-    public Zeit(int st, int min, int sek) {
-        setSt(st);
-        setMin(min);
-        setSek(sek);
+
+    public Zeit() {
+        st = ZonedDateTime.now().getHour();
+        min = ZonedDateTime.now().getMinute();
+        sek = ZonedDateTime.now().getSecond();
+
+
 
     }
+
 
     public void gettime(){
         System.out.println("Time: " + st + ":" + min + ":" + sek);
@@ -41,7 +48,7 @@ public class Zeit{
 
 
     public Zeit clone(){
-        Zeit z1 = new Zeit(st, min, sek);
+        Zeit z1 = new Zeit();
         return z1;
     }
 
