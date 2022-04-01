@@ -11,11 +11,16 @@
     <center>
       <HBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-              <Label fx:id="aktuelleUhrzeit" alignment="CENTER" prefHeight="64.0" prefWidth="147.0" text="00:00:00">
-                  <font>
-                      <Font size="36.0" />
-                  </font>
-              </Label>
+            <VBox>
+               <children>
+                    <Label fx:id="aktuelleUhrzeit" alignment="BOTTOM_CENTER" prefHeight="140.0" prefWidth="147.0" text="00:00:00">
+                        <font>
+                            <Font size="36.0" />
+                        </font>
+                    </Label>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="140.0" prefWidth="147.0" text="12h format" />
+               </children>
+            </VBox>
          </children>
       </HBox>
     </center>
