@@ -4,7 +4,6 @@ module com.example.uhrzeit {
 
 
     opens com.example.uhrzeit to javafx.fxml;
-    exports com.example.uhrzeit.view;
     exports com.example.uhrzeit.controller;
     opens com.example.uhrzeit.controller to javafx.fxml;
 }

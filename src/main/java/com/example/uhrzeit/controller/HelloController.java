@@ -19,6 +19,7 @@ public class HelloController {
     public Label stoppuhrausgabe;
     public Button stoppuhr;
     public Button startUhr;
+    public BorderPane Hintergrund;
     @FXML
     private Label welcomeText;
 
@@ -30,14 +31,13 @@ public class HelloController {
         Date date=new Date();
         calendar.setTime(date);
         aktuelleKalenderWoche.setText(String.valueOf(calendar.get(Calendar.WEEK_OF_YEAR)));
-
     }
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    public void onstoppuhrClick(ActionEvent actionEvent) throws InterruptedException {
+    public void onStoppUhr_Timer_click(ActionEvent actionEvent) throws InterruptedException {
         boolean isRunning = true;
         int sec=0;
         int min=0;
@@ -74,6 +74,11 @@ public class HelloController {
 
     }
 
+    public void onAnalogclick(ActionEvent actionEvent) {
+    }
+
+    public void onBinaerclick(ActionEvent actionEvent) {
+    }
 }
 
 
