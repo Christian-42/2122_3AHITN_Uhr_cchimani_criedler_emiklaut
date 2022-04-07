@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/uhrzeit/Menu_Digital.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Uhr");
+        stage.setTitle("Uh");
         stage.setScene(scene);
         stage.show();
     }
