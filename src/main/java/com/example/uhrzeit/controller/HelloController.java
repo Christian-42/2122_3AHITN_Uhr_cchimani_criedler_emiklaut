@@ -28,47 +28,56 @@ public class HelloController{
 
 
     public void initialize() {
+
+
         aktuellesDatum.setText(ZonedDateTime.now().getDayOfMonth() + "." + ZonedDateTime.now().getMonthValue() + "." + ZonedDateTime.now().getYear());
-        aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+
         Calendar calendar = Calendar.getInstance();
         Date date = new Date();
         calendar.setTime(date);
         aktuelleKalenderWoche.setText(String.valueOf(calendar.get(Calendar.WEEK_OF_YEAR)));
 
-    }
 
 
+            Thread thread = new Thread(new Runnable() {
 
+                @Override
+                public void run() {
+                    Runnable updater = new Runnable() {
 
-        public void run() {
-            while (true){
-                try {
-                    Thread.sleep(1000);
-                   // Platform.runLater();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                        @Override
+                        public void run() {
+                            aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+                        }
+                    };
+
+                    while (true) {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException ex) {
+                        }
+
+                        // UI update is run on the Application thread
+                        Platform.runLater(updater);
+
+                    }
                 }
 
-                aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
-                Calendar calendar = Calendar.getInstance();
-                Date date = new Date();
-                calendar.setTime(date);
-                aktuelleKalenderWoche.setText(String.valueOf(calendar.get(Calendar.WEEK_OF_YEAR)));
-                aktuellesDatum.setText(ZonedDateTime.now().getDayOfMonth() + "." + ZonedDateTime.now().getMonthValue() + "." + ZonedDateTime.now().getYear());
-            }
+            });
+            // don't let thread prevent JVM shutdown
+        thread.setDaemon(true);
+        thread.start();
         }
 
 
 
+            public void hintergrund(BorderPane hintergrund) {
+                this.hintergrund = hintergrund;
+            }
 
-
-    public void hintergrund(BorderPane hintergrund) {
-        this.hintergrund = hintergrund;
-    }
-
-    public void onStoppUhr_Timer_click(ActionEvent actionEvent) throws InterruptedException, IOException {
-        System.out.println("received click");
-        new StoppUhr_TimerController();
+            public void onStoppUhr_Timer_click(ActionEvent actionEvent) throws InterruptedException, IOException {
+                System.out.println("received click");
+                new StoppUhr_TimerController();
         /*boolean isRunning = true;
         int sec = 0;
         int min = 0;
@@ -90,17 +99,18 @@ public class HelloController{
             }
         }
         */
-    }
+            }
 
-    @FXML
-    public void onAnalogclick(ActionEvent actionEvent) throws IOException {
-        new AnalogController();
-    }
+            @FXML
+            public void onAnalogclick(ActionEvent actionEvent) throws IOException {
+                new AnalogController();
+            }
 
-    public void onBinaerclick(ActionEvent actionEvent) throws IOException {
-        new BinaerController();
-    }
-}
+            public void onBinaerclick(ActionEvent actionEvent) throws IOException {
+                new BinaerController();
+            }
+        }
+
 
 
 
