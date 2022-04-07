@@ -10,9 +10,9 @@ import java.util.Objects;
 
 public class BinaerController extends Stage {
     Stage stage;
-    public void Start() throws IOException {
+    public BinaerController() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("binary.fxml")));
+        Parent root = FXMLLoader.load(getClass().getResource("com/example/uhrzeit/binary.fxml"));
 
         Scene scene = new Scene(root);
 

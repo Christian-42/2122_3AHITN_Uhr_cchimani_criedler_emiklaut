@@ -10,12 +10,11 @@ import java.util.Objects;
 
 public class StoppUhr_TimerController extends Stage {
     Stage stage;
-    public void Start() throws IOException {
+    public  StoppUhr_TimerController() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("StoppUhr_TimerController.fxml")));
+        Parent root = FXMLLoader.load(getClass().getResource("com/example/uhrzeit/StoppUhr_Timer.fxml"));
 
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
         stage.show();
     }

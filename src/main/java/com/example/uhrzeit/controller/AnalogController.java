@@ -10,9 +10,9 @@ import java.util.Objects;
 
 public class AnalogController extends Stage {
     Stage stage;
-    public void Start() throws IOException {
+    public AnalogController() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Analog.fxml")));
+        Parent root = FXMLLoader.load(getClass().getResource("com/example/uhrzeit/Analog.fxml"));
 
         Scene scene = new Scene(root);
 
