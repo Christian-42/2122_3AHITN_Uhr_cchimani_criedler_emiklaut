@@ -12,7 +12,7 @@ public class StoppUhr_TimerController extends Stage {
     Stage stage;
     public  StoppUhr_TimerController() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(getClass().getResource("com/example/uhrzeit/StoppUhr_Timer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/uhrzeit/StoppUhr_Timer.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

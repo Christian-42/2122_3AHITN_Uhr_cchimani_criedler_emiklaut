@@ -12,7 +12,7 @@ public class AnalogController extends Stage {
     Stage stage;
     public AnalogController() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(getClass().getResource("com/example/uhrzeit/Analog.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/uhrzeit/Analog.fxml"));
 
         Scene scene = new Scene(root);
 

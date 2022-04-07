@@ -12,7 +12,7 @@ public class BinaerController extends Stage {
     Stage stage;
     public BinaerController() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(getClass().getResource("com/example/uhrzeit/binary.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/uhrzeit/binary.fxml"));
 
         Scene scene = new Scene(root);
 
