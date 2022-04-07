@@ -41,7 +41,7 @@ public class HelloController {
             while (true){
                 try {
                     Thread.sleep(1000);
-                    Platform.runLater();
+                    //Platform.runLater();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
