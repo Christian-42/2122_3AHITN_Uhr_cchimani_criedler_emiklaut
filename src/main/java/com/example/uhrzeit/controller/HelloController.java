@@ -109,7 +109,11 @@ public class HelloController{
             public void onBinaerclick(ActionEvent actionEvent) throws IOException {
                 new BinaerApplication();
             }
-        }
+
+    public void onswitchformatclick(ActionEvent actionEvent) {
+
+    }
+}
 
 
 

@@ -1,5 +1,5 @@
 package com.example.uhrzeit.controller;
 
-public class BinController {
+public class BinaerController {
 
 }
