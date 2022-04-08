@@ -8,14 +8,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class BinaerController extends Stage {
+public class StoppUhr_TimerApplication extends Stage {
     Stage stage;
-    public BinaerController() throws IOException {
+    public StoppUhr_TimerApplication() throws IOException {
         stage = this;
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/uhrzeit/binary.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/uhrzeit/StoppUhr_Timer.fxml")));
 
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
         stage.show();
     }
