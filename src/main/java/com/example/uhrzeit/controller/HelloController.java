@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class HelloController {
     public BorderPane hintergrund;
@@ -20,6 +21,8 @@ public class HelloController {
     public Label aktuelleKalenderWoche;
     public BorderPane Hintergrund;
     public Button runde;
+    public Label ampm;
+    public Button formattext;
 
 
     public void initialize() {
@@ -30,6 +33,7 @@ public class HelloController {
         Date date = new Date();
         calendar.setTime(date);
         aktuelleKalenderWoche.setText(String.valueOf(calendar.get(Calendar.WEEK_OF_YEAR)));
+        formattext.setText("Switch to 12h Format");
 
 
         Thread thread = new Thread(new Runnable() {
@@ -41,6 +45,7 @@ public class HelloController {
                     @Override
                     public void run() {
                         aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+
                     }
                 };
 
@@ -82,6 +87,20 @@ public class HelloController {
     }
 
     public void onswitchformatclick(ActionEvent actionEvent) {
+        if (Objects.equals(formattext.getText(), "Switch to 12h Format")) {
+            if (ZonedDateTime.now().getHour() < 12) {
+                ampm.setText("am");
+            } else {
+                aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() - 12 + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+                ampm.setText("pm");
+            }
+            formattext.setText("Switch to 24h Format");
+        } else {
+            aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+            formattext.setText("Switch to 12h Format");
+            ampm.setText("");
+
+        }
 
     }
 }
