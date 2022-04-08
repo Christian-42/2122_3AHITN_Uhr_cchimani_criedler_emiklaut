@@ -25,10 +25,11 @@ public class HelloController{
     public Button startUhr;
     */
     public BorderPane Hintergrund;
+    public Button runde;
 
 
     public void initialize() {
-
+        System.out.println("init");
 
         aktuellesDatum.setText(ZonedDateTime.now().getDayOfMonth() + "." + ZonedDateTime.now().getMonthValue() + "." + ZonedDateTime.now().getYear());
 
