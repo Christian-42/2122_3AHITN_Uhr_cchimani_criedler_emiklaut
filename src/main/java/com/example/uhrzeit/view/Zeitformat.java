@@ -8,6 +8,7 @@ public class Zeitformat extends Zeit{
     int sek;
 
     Zeitformat() {
+        super();
 
     }
 
