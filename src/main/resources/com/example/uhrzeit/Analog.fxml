@@ -83,7 +83,7 @@
                   <Line endX="200.0" endY="202.0" layoutX="1.0" layoutY="-4.0" startX="200.0" startY="66.0" strokeWidth="4.0" />
                </children>
             </Pane>
-            <Circle radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle radius="6.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </StackPane>
    </children>
