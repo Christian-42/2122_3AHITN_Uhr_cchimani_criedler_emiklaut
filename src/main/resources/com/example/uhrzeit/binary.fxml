@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhrzeit.controller.BinaerController">
+   <top>
+      <AnchorPane prefHeight="633.0" prefWidth="804.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="208.0" layoutX="203.0" stroke="BLACK" strokeType="INSIDE" width="260.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="221.0" layoutX="203.0" layoutY="269.0" stroke="BLACK" strokeType="INSIDE" width="260.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b6e80" height="146.0" layoutX="203.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="260.0" />
+            <Label layoutX="254.0" layoutY="200.0" text="16" />
+            <Label layoutX="297.0" layoutY="200.0" text="8" />
+            <Label layoutX="337.0" layoutY="200.0" text="4" />
+            <Label layoutX="377.0" layoutY="200.0" text="2" />
+            <Label layoutX="417.0" layoutY="200.0" text="1" />
+            <Label layoutX="229.0" layoutY="274.0" text="32" />
+            <Label layoutX="269.0" layoutY="274.0" text="16" />
+            <Label layoutX="312.0" layoutY="274.0" text="8" />
+            <Label layoutX="352.0" layoutY="274.0" text="4" />
+            <Label layoutX="392.0" layoutY="274.0" text="2" />
+            <Label layoutX="432.0" layoutY="274.0" text="1" />
+            <Circle fill="#5b6e80" layoutX="260.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="300.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="340.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="380.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="420.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="235.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="275.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="315.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="395.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="355.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#5b6e80" layoutX="435.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="214.0" layoutY="209.0" text="H">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="208.0" layoutY="264.0" text="M">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

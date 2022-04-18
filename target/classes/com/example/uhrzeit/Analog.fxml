@@ -73,14 +73,14 @@
       </Label>
       <StackPane layoutX="29.0" layoutY="3.0" prefHeight="400.0" prefWidth="398.0">
          <children>
-            <Pane fx:id="minuterotate" prefHeight="400.0" prefWidth="400.0">
+            <Pane prefHeight="400.0" prefWidth="400.0">
                <children>
-                  <Line endX="-117.0" layoutX="317.0" layoutY="200.0" startX="-117.0" startY="-163.0" />
+                  <Line endX="-117.0" layoutX="317.0" layoutY="200.0" startX="47.0" />
                </children>
             </Pane>
-            <Pane fx:id="stundenrotate" prefHeight="400.0" prefWidth="515.0">
+            <Pane prefHeight="400.0" prefWidth="515.0">
                <children>
-                  <Line endX="198.0" endY="204.0" layoutX="1.0" layoutY="-4.0" startX="198.0" startY="99.0" strokeWidth="4.0" />
+                  <Line endX="200.0" endY="202.0" layoutX="1.0" layoutY="-4.0" startX="200.0" startY="66.0" strokeWidth="4.0" />
                </children>
             </Pane>
             <Circle radius="6.0" stroke="BLACK" strokeType="INSIDE" />
