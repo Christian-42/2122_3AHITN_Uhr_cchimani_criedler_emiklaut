@@ -15,19 +15,19 @@
                <children>
                   <HBox>
                      <children>
-                          <Label fx:id="aktuelleUhrzeit" alignment="BOTTOM_CENTER" prefHeight="140.0" prefWidth="147.0" text="00:00:00">
+                          <Label fx:id="aktuelleUhrzeit" alignment="BOTTOM_CENTER" prefHeight="140.0" prefWidth="138.0" text="00:00:00">
                               <font>
                                   <Font size="36.0" />
                               </font>
                           </Label>
-                        <Label fx:id="ampm" alignment="BOTTOM_CENTER" prefHeight="134.0" prefWidth="39.0" text="a.m">
+                        <Label fx:id="ampm" alignment="BOTTOM_CENTER" prefHeight="134.0" prefWidth="71.0">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onswitchformatclick" prefHeight="140.0" prefWidth="147.0" text="12h format" />
+                  <Button fx:id="formattext" alignment="CENTER" mnemonicParsing="false" onAction="#onswitchformatclick" prefHeight="140.0" prefWidth="209.0" text="12h format" />
                </children>
             </VBox>
          </children>

@@ -20,7 +20,7 @@
                                   <Font size="36.0" />
                               </font>
                           </Label>
-                        <Label fx:id="ampm" alignment="BOTTOM_CENTER" prefHeight="134.0" prefWidth="71.0" text="a.m">
+                        <Label fx:id="ampm" alignment="BOTTOM_CENTER" prefHeight="134.0" prefWidth="71.0">
                            <font>
                               <Font size="24.0" />
                            </font>

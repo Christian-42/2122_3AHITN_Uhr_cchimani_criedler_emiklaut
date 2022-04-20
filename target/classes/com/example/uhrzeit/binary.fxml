@@ -25,17 +25,17 @@
             <Label layoutX="352.0" layoutY="274.0" text="4" />
             <Label layoutX="392.0" layoutY="274.0" text="2" />
             <Label layoutX="432.0" layoutY="274.0" text="1" />
-            <Circle fill="#5b6e80" layoutX="260.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="300.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="340.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="380.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="420.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="235.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="275.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="315.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="395.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="355.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#5b6e80" layoutX="435.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="h16" fill="#5b6e80" layoutX="260.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="h8" fill="#5b6e80" layoutX="300.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="h4" fill="#5b6e80" layoutX="340.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="h2" fill="#5b6e80" layoutX="380.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="h1" fill="#5b6e80" layoutX="420.0" layoutY="224.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="m32" fill="#5b6e80" layoutX="235.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="m16" fill="#5b6e80" layoutX="275.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="m8" fill="#5b6e80" layoutX="315.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="m2" fill="#5b6e80" layoutX="395.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="m4" fill="#5b6e80" layoutX="355.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="m1" fill="#5b6e80" layoutX="435.0" layoutY="269.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
             <Label layoutX="214.0" layoutY="209.0" text="H">
                <font>
                   <Font size="14.0" />
