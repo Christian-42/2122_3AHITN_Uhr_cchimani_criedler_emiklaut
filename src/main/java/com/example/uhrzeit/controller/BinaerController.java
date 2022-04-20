@@ -39,7 +39,7 @@ public class BinaerController {
      * Der Thread wird bis zum schließen des Programms ausgefuehrt wobei er jede Sekunde updatet.
      */
     public void initialize() {
-        Circle[] name = {h16, h8, h4, h2, h1, m32, m16, m8, m4, m2, m1};
+        Circle[] circlearr = {h16, h8, h4, h2, h1, m32, m16, m8, m4, m2, m1};
 
 
         Thread thread = new Thread(new Runnable() {
@@ -60,9 +60,9 @@ public class BinaerController {
 
                         for (int i = 0; i < 11; i++) {
                             if (bin.charAt(i) == '1') {
-                                name[i].setFill(Color.RED);
+                                circlearr[i].setFill(Color.RED);
                             }else {
-                                name[i].setFill(Color.TRANSPARENT);
+                                circlearr[i].setFill(Color.TRANSPARENT);
 
                             }
                         }
