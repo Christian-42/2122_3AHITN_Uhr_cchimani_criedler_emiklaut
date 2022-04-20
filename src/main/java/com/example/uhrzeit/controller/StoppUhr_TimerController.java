@@ -12,10 +12,14 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.time.ZonedDateTime;
 import java.util.Date;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.*;
 
+/**
+ * @author Christian Chimani
+ */
 public class StoppUhr_TimerController {
     public Button runde;
     public Button stoppstart;
@@ -28,12 +32,19 @@ public class StoppUhr_TimerController {
     public Label timerabgelaufensymbol;
     static int eingabe = 0;
     public ImageView imageview;
+    public Button Stop;
+    int min=0;
+    int sec=0;
+    static int count = 0;
+
+
 
     public void startpause(ActionEvent actionEvent) throws InterruptedException {
 
 
 
-        eingabe= Integer.valueOf(eingabedergewuenchtenzeit.getText());
+
+        eingabe = Integer.parseInt(eingabedergewuenchtenzeit.getText());
         System.out.println(eingabe);
 
         Thread thread = new Thread(new Runnable() {
@@ -50,13 +61,11 @@ public class StoppUhr_TimerController {
                     }
                 };
 
-                while (eingabe>1) {
+                while (eingabe > 1) {
 
-                    if (eingabe==0){
-                        File file = new File("com/example/resources/symbole-glocke.jpg");
-                        Image image = new Image(file.toURI().toString());
-                        imageview = new ImageView(image);
-
+                    if (eingabe == 0) {
+                        Image glocke = new Image(Objects.requireNonNull(getClass().getResourceAsStream("com/example/uhrzeit/images/gl.png")));
+                        imageview.setImage(glocke);
                     }
                     try {
                         Thread.sleep(1000);
@@ -77,4 +86,54 @@ public class StoppUhr_TimerController {
     }
 
 
+
+
+    public void stoppstart(ActionEvent actionEvent)throws InterruptedException {
+        count=0;
+
+
+
+        Thread thread2 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                Runnable updater1 = new Runnable() {
+
+                    @Override
+                    public void run() {
+
+
+                        if (sec==6&&count==9){
+                            sec=0;
+                            count=0;
+                            min++;
+                        }
+                        if (count==9){
+                            count=0;
+                            sec++;
+                        }
+
+                        count++;
+                        timeausgabe.setText("00:"+"0"+min+":"+sec+count);
+
+                    }
+                };
+
+                while (!Stop.isHover()) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                    }
+
+                    // UI update is run on the Application thread
+                    Platform.runLater(updater1);
+
+                }
+            }
+
+        });
+        // don't let thread prevent JVM shutdown
+        thread2.setDaemon(true);
+        thread2.start();
+    }
 }
