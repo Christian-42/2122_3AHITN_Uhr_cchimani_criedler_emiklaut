@@ -27,6 +27,7 @@ public class HelloController {
     public BorderPane Hintergrund;
     public Label ampm;
     public Button formattext;
+    public boolean twelvehourformat=false;
 
 
     /**
@@ -53,9 +54,15 @@ public class HelloController {
 
                     @Override
                     public void run() {
-                        aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+                        if(!twelvehourformat) {
+                            aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+                        }else {
+                            aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() - 12 + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+
+                        }
 
                     }
+
                 };
 
                 while (true) {
@@ -93,15 +100,15 @@ public class HelloController {
 
     public void onswitchformatclick(ActionEvent actionEvent) {
         if (Objects.equals(formattext.getText(), "Switch to 12h Format")) {
+             twelvehourformat= true;
             if (ZonedDateTime.now().getHour() < 12) {
                 ampm.setText("am");
             } else {
-                aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() - 12 + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
                 ampm.setText("pm");
             }
             formattext.setText("Switch to 24h Format");
         } else {
-            aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+            twelvehourformat=false;
             formattext.setText("Switch to 12h Format");
             ampm.setText("");
 
