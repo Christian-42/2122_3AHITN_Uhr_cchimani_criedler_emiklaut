@@ -19,6 +19,7 @@ import java.util.concurrent.*;
 
 /**
  * @author Christian Chimani
+ * @version 1.5
  */
 public class StoppUhr_TimerController {
     public Button runde;
@@ -38,7 +39,13 @@ public class StoppUhr_TimerController {
     static int count = 0;
 
 
-
+    /**
+     *
+     * @throws InterruptedException mit try catch abfangen falls Thread unterbrochen wird
+     * Man gibt die gewünschten Sekunden ein, soblad start gedrückt wird gehen die Sekunden hinunter.
+     * Sobald die Zeit abgelaufen ist wird ein Image ausgegeben(Probleme mit ImageView)
+     *
+     */
     public void startpause(ActionEvent actionEvent) throws InterruptedException {
 
 
@@ -86,8 +93,12 @@ public class StoppUhr_TimerController {
     }
 
 
-
-
+    /**
+     *
+     *
+     * @throws InterruptedException mit try catch abfangen falls Thread unterbrochen wird
+     * Die Zeitmessung startet bei Click auf Startund wird mit Stopp angehalten
+     */
     public void stoppstart(ActionEvent actionEvent)throws InterruptedException {
         count=0;
 
