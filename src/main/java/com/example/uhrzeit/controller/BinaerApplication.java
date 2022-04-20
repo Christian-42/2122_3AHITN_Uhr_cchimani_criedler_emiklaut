@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author emiklaut
+ * BinaerApplication ist verwantworlich fuer das oeffnen des Fensters Analog.fxml
+ */
 public class BinaerApplication extends Stage {
     Stage stage;
     public BinaerApplication() throws IOException {

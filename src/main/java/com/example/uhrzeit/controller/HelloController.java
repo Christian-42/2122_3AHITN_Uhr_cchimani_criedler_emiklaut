@@ -14,17 +14,26 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * @author criedler, cchimani
+ * Verantwortlich fuer die Funktionalitaet im Menu_Digital.fxml
+ * Die Kompononenten die im fxml eine fxid haben werden initalisiert um sie zu bearbeiten.
+ */
+
 public class HelloController {
-    public BorderPane hintergrund;
     public Label aktuelleUhrzeit;
     public Label aktuellesDatum;
     public Label aktuelleKalenderWoche;
     public BorderPane Hintergrund;
-    public Button runde;
     public Label ampm;
     public Button formattext;
 
 
+    /**
+     * @author criedler, cchimani
+     * Zuerst werden alle Labels befüllt die nicht staendig aktualisiert werden muessen
+     *
+     */
     public void initialize() {
 
         aktuellesDatum.setText(ZonedDateTime.now().getDayOfMonth() + "." + ZonedDateTime.now().getMonthValue() + "." + ZonedDateTime.now().getYear());
@@ -68,12 +77,8 @@ public class HelloController {
     }
 
 
-    public void hintergrund(BorderPane hintergrund) {
-        this.hintergrund = hintergrund;
-    }
 
     public void onStoppUhr_Timer_click(ActionEvent actionEvent) throws InterruptedException, IOException {
-        System.out.println("received click");
         new StoppUhr_TimerApplication();
     }
 

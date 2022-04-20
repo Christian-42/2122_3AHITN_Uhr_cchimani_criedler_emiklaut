@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * @author cchimani
+ */
 public class StoppUhr_TimerApplication extends Stage {
     Stage stage;
     public StoppUhr_TimerApplication() throws IOException {

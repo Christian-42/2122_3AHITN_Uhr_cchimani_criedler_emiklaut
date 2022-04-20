@@ -4,6 +4,9 @@ import com.example.uhrzeit.view.Zeit;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
+/**
+ * @author emiklaut
+ */
 public class AnalogController {
     @FXML
     private Pane minuterotate;

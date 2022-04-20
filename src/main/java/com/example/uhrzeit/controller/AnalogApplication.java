@@ -7,6 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author emiklaut
+ * AnalogApplication ist verwantworlich fuer das oeffnen des Fensters Analog.fxml
+ *
+ */
 public class AnalogApplication extends Stage {
     Stage stage;
     public AnalogApplication() throws IOException {
@@ -17,5 +22,6 @@ public class AnalogApplication extends Stage {
 
         stage.setScene(scene);
         stage.show();
+
     }
 }

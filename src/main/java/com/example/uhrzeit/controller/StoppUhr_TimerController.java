@@ -16,6 +16,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.*;
 
+/**
+ * @author cchimani
+ */
 public class StoppUhr_TimerController {
     public Button runde;
     public Button stoppstart;

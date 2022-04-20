@@ -1,15 +1,17 @@
 package com.example.uhrzeit.controller;
 
 import javafx.application.Platform;
-import javafx.fxml.Initializable;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-import java.net.URL;
 import java.time.ZonedDateTime;
-import java.util.ResourceBundle;
 
-public class BinaerController implements Initializable {
+/**
+ * @author criedler
+ * BinaerController ist zuständig für die binary.fxml Datei
+ * Es wird für alle Circles Speicherplatz reserviert.
+ */
+public class BinaerController {
 
     public Circle h16;
     public Circle h8;
@@ -22,12 +24,22 @@ public class BinaerController implements Initializable {
     public Circle m4;
     public Circle m2;
     public Circle m1;
-    public Circle[] circlesarr = new Circle[11];
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    /**
+     * Initialize wird beim Start des Fensters aufgerufen
+     * Alle circles werden in ein Array gespeichert
+     * Es wird ein neues Thread Objekt angelegt.
+     * In der run methode werden 3 String variablen angelegt jeweils für die Anzahl der Stunden in Binaer und in Minuten.
+     * In werden diese dann zumsammengefuegt.
+     * In binm und binh wird jeweils die aktuelle Stunde oder Minute in einen Binary String konvertiert,
+     * wobei die Anzahl der Stellen bei Stunden auf 5 Stellen und bei Minuten auf 6 Stellen mit Nullen aufgefuellt wird.
+     * In einer for-Schleife wird dann das ganze circlearray durchgegangen und jeder Kreis entweder auf die Farbe rot,
+     * oder auf transparent, also nichts, gesetzt. Abhaengig davon ob an der Stelle im binaryString eine 1 steht oder eine 0.
+     * Der Thread wird bis zum schließen des Programms ausgefuehrt wobei er jede Sekunde updatet.
+     */
+    public void initialize() {
         Circle[] name = {h16, h8, h4, h2, h1, m32, m16, m8, m4, m2, m1};
-        circlesarr = name;
 
 
         Thread thread = new Thread(new Runnable() {
@@ -48,9 +60,9 @@ public class BinaerController implements Initializable {
 
                         for (int i = 0; i < 11; i++) {
                             if (bin.charAt(i) == '1') {
-                                circlesarr[i].setFill(Color.RED);
+                                name[i].setFill(Color.RED);
                             }else {
-                                circlesarr[i].setFill(Color.TRANSPARENT);
+                                name[i].setFill(Color.TRANSPARENT);
 
                             }
                         }
