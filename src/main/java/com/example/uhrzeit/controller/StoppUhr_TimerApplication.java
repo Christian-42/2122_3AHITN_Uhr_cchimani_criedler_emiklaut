@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * @author cchimani
+ * StoppUhr_Timer fxml wird geöffnet
  */
 public class StoppUhr_TimerApplication extends Stage {
     Stage stage;

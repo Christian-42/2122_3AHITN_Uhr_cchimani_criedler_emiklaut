@@ -42,7 +42,7 @@
                </effect></Button>
          </right>
          <top>
-            <TextField fx:id="eingabedergewuenchtenzeit" alignment="CENTER" prefWidth="278.0" promptText="00" BorderPane.alignment="CENTER">
+            <TextField fx:id="eingabedergewuenchtenzeit" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="46.0" promptText="00" BorderPane.alignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
@@ -52,7 +52,7 @@
             </TextField>
          </top>
          <center>
-            <Label fx:id="timeausgabe1" alignment="CENTER" prefHeight="62.0" prefWidth="115.0" text="runnigtime" BorderPane.alignment="CENTER">
+            <Label fx:id="timeausgabe1" alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="118.0" text="runnigtime" BorderPane.alignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>

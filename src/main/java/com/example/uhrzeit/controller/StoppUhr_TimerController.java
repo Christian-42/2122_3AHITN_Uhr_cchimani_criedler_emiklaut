@@ -35,6 +35,7 @@ public class StoppUhr_TimerController {
     static int eingabe = 0;
     public ImageView imageview;
     public Button Stop;
+    public Button reset;
     int min=0;
     int sec=0;
     static int count = 0;
@@ -45,6 +46,7 @@ public class StoppUhr_TimerController {
      * @throws InterruptedException mit try catch abfangen falls Thread unterbrochen wird
      * Man gibt die gewünschten Sekunden ein, soblad start gedrückt wird gehen die Sekunden hinunter.
      * Sobald die Zeit abgelaufen ist wird ein Image ausgegeben(Probleme mit ImageView)
+     * Durch Thread.sleep wird die entsprechende Sekunden gewartet dann wird herunter gezählt
      *
      */
     public void startpause(ActionEvent actionEvent) throws InterruptedException {
@@ -61,9 +63,9 @@ public class StoppUhr_TimerController {
             public void run() {
                 Runnable updater = new Runnable() {
 
+
                     @Override
                     public void run() {
-
                         eingabe--;
                         timeausgabe1.setText(String.valueOf(eingabe));
                         if (eingabe == 0) {
@@ -71,11 +73,13 @@ public class StoppUhr_TimerController {
                             imageview.setImage(glocke);
 
                         }
+
                     }
+
                 };
 
-                while (eingabe > 1) {
 
+                while (eingabe > 1) {
 
                     try {
                         Thread.sleep(1000);
@@ -101,6 +105,7 @@ public class StoppUhr_TimerController {
      *
      * @throws InterruptedException mit try catch abfangen falls Thread unterbrochen wird
      * Die Zeitmessung startet bei Click auf Startund wird mit Stopp angehalten
+     * Durch Thread.sleep wird die entsprechende Sekunden gewartet dann wird herunter gezählt
      */
     public void stoppstart(ActionEvent actionEvent)throws InterruptedException {
         count=0;
