@@ -13,8 +13,7 @@ import static java.lang.Thread.sleep;
     public class Zeit implements Runnable {
         int min;
         int st;
-        int sek;
-        Pane minutes;
+        int sek;        Pane minutes;
         Pane hours;
 
 

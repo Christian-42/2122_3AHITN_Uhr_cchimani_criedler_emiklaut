@@ -28,11 +28,16 @@ public class HelloController {
     public Label ampm;
     public Button formattext;
     public boolean twelvehourformat=false;
+    public boolean vormittag=false;
 
 
     /**
      * @author criedler, cchimani
-     * Zuerst werden alle Labels befüllt die nicht staendig aktualisiert werden muessen
+     * Zuerst werden alle Labels befüllt die nicht staendig aktualisiert werden muessen wie Datum und Kalenderwoche
+     * Anschließend wird ein neuer Thread erstellt.
+     * In der run methode werden dann Stunden minuten und Sekunden jede Sekunde neu akutalisiert
+     * Abhängig davon welches der 2 Zeitformate ausgewählt ist wird die Uhrzeit dann dementsprechend ausgegeben
+     *
      *
      */
     public void initialize() {
@@ -55,9 +60,15 @@ public class HelloController {
                     @Override
                     public void run() {
                         if(!twelvehourformat) {
+
                             aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
                         }else {
-                            aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() - 12 + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+                            if (!vormittag) {
+                                aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() - 12 + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+                            }else{
+                                aktuelleUhrzeit.setText(ZonedDateTime.now().getHour() + ":" + ZonedDateTime.now().getMinute() + ":" + ZonedDateTime.now().getSecond());
+
+                            }
 
                         }
 
@@ -84,26 +95,49 @@ public class HelloController {
     }
 
 
-
-    public void onStoppUhr_Timer_click(ActionEvent actionEvent) throws InterruptedException, IOException {
+    /**
+     *
+     * Ruft den Konstruktur der StoppUhr_TimerApplication Klase auf
+     */
+    public void onStoppUhr_Timer_click() throws IOException {
         new StoppUhr_TimerApplication();
     }
 
+    /**
+     *      * Ruft den Konstruktur der AnalogApplication Klasse auf
+     */
     @FXML
-    public void onAnalogclick(ActionEvent actionEvent) throws IOException {
+    public void onAnalogclick() throws IOException {
         new AnalogApplication();
     }
 
-    public void onBinaerclick(ActionEvent actionEvent) throws IOException {
+    /**
+     * Ruft den Konstruktur der BinaerApplication Klasse auf
+     */
+    public void onBinaerclick() throws IOException {
         new BinaerApplication();
     }
 
-    public void onswitchformatclick(ActionEvent actionEvent) {
+    /**
+     * Überprüft in was fuer einem Format die Uhr aktuell ausgegeben wird in dem der Text im Label verglichen wird.
+     * Wenn im button "Switch to 12h format" steht, heißt das, dass der Benutzer auf 12h format wechseln möchte,
+     * dementsprechend wird die variable twelvehourformat auf wahr gesetzt.
+     * Anschließend muss man noch herausfinden ob es vor oder nachmittag ist um zu wiisen ob am oder pm angezeigt werden muss.
+     * Wenn die Anzahl der Stunden weniger wie 12 ist wird vormittag auf wahr gesetzt.
+     * Mit dieser variable kann spaeter heruasgefunden werden ob die Stunden -12 gerechnet werden muessen.
+     * Zu Ende wird der Text im Switch Button noch auf das davorige Zeitformat gesetzt (24h Format).
+     * Falls im Label nicht "Switch to 12h Format" steht wird twelvehourformat auf False gesetzt,
+     * der Text im Button auf "Switch to 12h format" gesetzt und das am/pm lable gecleared
+     *
+     */
+    public void onswitchformatclick() {
         if (Objects.equals(formattext.getText(), "Switch to 12h Format")) {
              twelvehourformat= true;
             if (ZonedDateTime.now().getHour() < 12) {
+                vormittag=true;
                 ampm.setText("am");
             } else {
+                vormittag=false;
                 ampm.setText("pm");
             }
             formattext.setText("Switch to 24h Format");
