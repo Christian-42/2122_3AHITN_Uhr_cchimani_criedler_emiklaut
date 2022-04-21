@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -65,15 +66,17 @@ public class StoppUhr_TimerController {
 
                         eingabe--;
                         timeausgabe1.setText(String.valueOf(eingabe));
+                        if (eingabe == 0) {
+                            Image glocke = new Image("https://images.clipartlogo.com/files/istock/previews/8367/83671109-bell-icon-symbol.jpg");
+                            imageview.setImage(glocke);
+
+                        }
                     }
                 };
 
                 while (eingabe > 1) {
 
-                    if (eingabe == 0) {
-                        Image glocke = new Image(Objects.requireNonNull(getClass().getResourceAsStream("com/example/uhrzeit/images/gl.png")));
-                        imageview.setImage(glocke);
-                    }
+
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
@@ -101,7 +104,6 @@ public class StoppUhr_TimerController {
      */
     public void stoppstart(ActionEvent actionEvent)throws InterruptedException {
         count=0;
-
 
 
         Thread thread2 = new Thread(new Runnable() {
