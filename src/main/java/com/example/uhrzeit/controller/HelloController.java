@@ -2,7 +2,6 @@ package com.example.uhrzeit.controller;
 
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -82,21 +81,18 @@ public class HelloController {
                     } catch (InterruptedException ex) {
                     }
 
-                    // UI update is run on the Application thread
                     Platform.runLater(updater);
 
                 }
             }
 
         });
-        // don't let thread prevent JVM shutdown
         thread.setDaemon(true);
         thread.start();
     }
 
 
     /**
-     *
      * Ruft den Konstruktur der StoppUhr_TimerApplication Klase auf
      */
     public void onStoppUhr_Timer_click() throws IOException {
@@ -104,7 +100,7 @@ public class HelloController {
     }
 
     /**
-     *      * Ruft den Konstruktur der AnalogApplication Klasse auf
+     * Ruft den Konstruktur der AnalogApplication Klasse auf
      */
     @FXML
     public void onAnalogclick() throws IOException {

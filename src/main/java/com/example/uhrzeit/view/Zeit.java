@@ -10,6 +10,9 @@ import java.util.Objects;
 
 import static java.lang.Thread.sleep;
 
+/**
+ * @author emiklaut
+ */
     public class Zeit implements Runnable {
         int min;
         int st;

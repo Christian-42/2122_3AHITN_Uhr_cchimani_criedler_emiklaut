@@ -75,14 +75,12 @@ public class BinaerController {
                     } catch (InterruptedException ex) {
                     }
 
-                    // UI update is run on the Application thread
                     Platform.runLater(updater);
 
                 }
             }
 
         });
-        // don't let thread prevent JVM shutdown
         thread.setDaemon(true);
         thread.start();
 
