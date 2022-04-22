@@ -4,4 +4,5 @@ Manchen funktionalitaeten konnten nicht sofort implentiert werden da information
 Durch diese falsche/nicht vorhandene Informationen wurden Sachen nicht korrekt ausprogrammie
 Anderes Beispiel währe Bewegen des Zeigers, es konnte nicht durchgehend gleihzeitig programmiert werden weil manche Sachen noch nicht gezeigt wurden.
 Dadurch ging viel Zeit verloren.
+ImageView probleme bei zeigen von Bild dateien.
 
